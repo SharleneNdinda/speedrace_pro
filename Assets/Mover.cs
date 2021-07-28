@@ -5,6 +5,9 @@ using UnityEngine;
 public class Mover : MonoBehaviour
 {
 
+    public Vector3 com;
+    public Rigidbody rb;
+
   
     private const string Horizontal = "Horizontal";
     private const string Vertical = "Vertical";
@@ -29,6 +32,11 @@ public class Mover : MonoBehaviour
     [SerializeField] private Transform RearLeftTransform;
     [SerializeField] private Transform RearRightTransform;
 
+    void Start()
+        {
+            rb = GetComponent<Rigidbody>();
+            rb.centerOfMass = com;
+        }
 
     private void FixedUpdate()
         {
@@ -44,7 +52,10 @@ public class Mover : MonoBehaviour
             horizontalInput = Input.GetAxis("Horizontal");
             verticalInput = Input.GetAxis("Vertical"); 
             isBreaking = Input.GetKey(KeyCode.Space); 
-        }
+
+             
+     }
+        
 
     private void HandleMotor()
         {
