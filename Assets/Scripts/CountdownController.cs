@@ -6,8 +6,10 @@ using UnityEngine.UI;
 public class CountdownController : MonoBehaviour
 {
 
-    public float timeValue = 90; 
+    public float timeValue = 120; 
     public Text timeText;
+    public GameObject GameOverUI;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -20,6 +22,9 @@ public class CountdownController : MonoBehaviour
         if (timeValue > 0)
         {
             timeValue -= Time.deltaTime;
+            GameOverUI.SetActive(false);
+
+
         }
         else
         {
@@ -34,6 +39,12 @@ public class CountdownController : MonoBehaviour
             if (timeToDisplay < 0)
             {
                 timeToDisplay = 0;
+
+                // sets the game over ui to true and ends the game
+
+                GameOverUI.SetActive(true);
+                // FindObjectOfType<GameManager>().EndGame();
+                
             }
 
             float minutes = Mathf.FloorToInt(timeToDisplay / 60);

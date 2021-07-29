@@ -9,6 +9,8 @@ public class TimerController : MonoBehaviour
 {
  public Text timeCounter;
  private float startTime;
+ public static int minutes;
+ public static int seconds;
 
  void Start()
  {
