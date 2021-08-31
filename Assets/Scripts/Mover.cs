@@ -7,8 +7,7 @@ public class Mover : MonoBehaviour
 
     public Vector3 com;
     public Rigidbody rb;
-
-  
+   
     private const string Horizontal = "Horizontal";
     private const string Vertical = "Vertical";
 
@@ -96,4 +95,6 @@ public class Mover : MonoBehaviour
         wheelTransform.rotation = rot;
         wheelTransform.position = pos;
     } 
+
+   
 }

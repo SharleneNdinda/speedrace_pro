@@ -43,7 +43,7 @@ public class CountdownController : MonoBehaviour
                 // sets the game over ui to true and ends the game
 
                 GameOverUI.SetActive(true);
-                // FindObjectOfType<GameManager>().EndGame();
+                FindObjectOfType<GameManager>().EndGame();
                 
             }
 
